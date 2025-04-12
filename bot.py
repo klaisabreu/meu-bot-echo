@@ -34,10 +34,10 @@ gatilhos = [
 # Função que verifica se a mensagem deve gerar uma resposta
 async def verifica_mensagem(update: Update, context):
     mensagem = update.message.text.lower()
-    
-    # 40% chance de resposta (bot ativo) e 60% chance de ficar em silêncio
-    if random.random() < 0.4:  # 40% de chance para ser ativo
-        if any(gatilgo in mensagem for gatilho in gatilhos):
+
+    # 30% chance de resposta (bot ativo) e 70% chance de ficar em silêncio
+    if random.random() < 0.3:  # 30% de chance para ser ativo
+        if any(gatilho in mensagem for gatilho in gatilhos):
             frase = random.choice(frases_infectadas)
             await update.message.reply_text(frase)
 
