@@ -33,7 +33,7 @@ frases_infectadas = [
     "Silêncio total... por alguns segundos, até começar aquele clique repetitivo. Baixo, insistente. Se tem um Estalador por perto, os outros não estão longe."
     "Um grunhido baixo, abafado... depois o estalo. Não precisa ver pra saber que tem Estalador se aproximando, e ele não tá sozinho."
     "A névoa dos esporos tá densa. Tá difícil respirar. Isso só acontece quando aqueles desgraçados grandes aparecem... os que demoram anos pra virar o que são."
-    O silêncio é estranho demais. Infectados comuns não sabem se esconder assim. Ou tem algo diferente por perto... ou alguém."
+    "O silêncio é estranho demais. Infectados comuns não sabem se esconder assim. Ou tem algo diferente por perto... ou alguém."
     "Olhos brilham no escuro por um segundo. Rápidos. Focados. Não era só fome... era estratégia. Talvez um híbrido."
     "Tem pegadas recentes, mas espaçadas, leves... como se estivesse te seguindo sem querer ser notado. Isso é típico de híbrido."    
 ]
