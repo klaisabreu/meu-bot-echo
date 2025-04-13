@@ -20,21 +20,21 @@ frases_infectadas = [
     "Respirações aceleradas, seguidas por grunhidos, estão cada vez mais próximas.",
     "Algo corre pelas paredes, infectados estão no encalço!",
     "A neblina se move estranhamente. Um infectado se esgueira no breu.",
-    "Barulhos de garras raspando... Eles estão vindo."
-    "Shhh... Você ouviu isso? Tem um Estalador por perto."
-    "Não faça barulho. Qualquer som e eles vêm correndo."
-    "Tem fungo fresco no ar... eles passaram por aqui há pouco."
-    "Esse barulho... não é vento. É coisa pior."
-    "Olha ali... contorce igual um Estalador. Não se mexe!"
-    "Baiacu detectado! Se ele estourar, já era!"
-    "Tem alguma coisa se arrastando ali... o barulho é irregular, como se os pés mal tocassem o chão. Se for um Estalador, a gente vai saber pelo som."
-    "O ar ficou pesado... aquele cheiro podre, úmido. Isso sempre vem antes de um Corredor aparecer. Eles sentem a gente mesmo sem ver."
-    "Algo grande acabou de passar entre as sombras. Os fungos cobriam quase tudo no corpo dele. Aquilo não se move como um humano faz."
-    "Silêncio total... por alguns segundos, até começar aquele clique repetitivo. Baixo, insistente. Se tem um Estalador por perto, os outros não estão longe."
-    "Um grunhido baixo, abafado... depois o estalo. Não precisa ver pra saber que tem Estalador se aproximando, e ele não tá sozinho."
-    "A névoa dos esporos tá densa. Tá difícil respirar. Isso só acontece quando aqueles desgraçados grandes aparecem... os que demoram anos pra virar o que são."
-    "O silêncio é estranho demais. Infectados comuns não sabem se esconder assim. Ou tem algo diferente por perto... ou alguém."
-    "Olhos brilham no escuro por um segundo. Rápidos. Focados. Não era só fome... era estratégia. Talvez um híbrido."
+    "Barulhos de garras raspando... Eles estão vindo.",
+    "Shhh... Você ouviu isso? Tem um Estalador por perto.",
+    "Não faça barulho. Qualquer som e eles vêm correndo.",
+    "Tem fungo fresco no ar... eles passaram por aqui há pouco.",
+    "Esse barulho... não é vento. É coisa pior.",
+    "Olha ali... contorce igual um Estalador. Não se mexe!",
+    "Baiacu detectado! Se ele estourar, já era!",
+    "Tem alguma coisa se arrastando ali... o barulho é irregular, como se os pés mal tocassem o chão. Se for um Estalador, a gente vai saber pelo som.",
+    "O ar ficou pesado... aquele cheiro podre, úmido. Isso sempre vem antes de um Corredor aparecer. Eles sentem a gente mesmo sem ver.",
+    "Algo grande acabou de passar entre as sombras. Os fungos cobriam quase tudo no corpo dele. Aquilo não se move como um humano faz.",
+    "Silêncio total... por alguns segundos, até começar aquele clique repetitivo. Baixo, insistente. Se tem um Estalador por perto, os outros não estão longe.",
+    "Um grunhido baixo, abafado... depois o estalo. Não precisa ver pra saber que tem Estalador se aproximando, e ele não tá sozinho.",
+    "A névoa dos esporos tá densa. Tá difícil respirar. Isso só acontece quando aqueles desgraçados grandes aparecem... os que demoram anos pra virar o que são.",
+    "O silêncio é estranho demais. Infectados comuns não sabem se esconder assim. Ou tem algo diferente por perto... ou alguém.",
+    "Olhos brilham no escuro por um segundo. Rápidos. Focados. Não era só fome... era estratégia. Talvez um híbrido.",
     "Tem pegadas recentes, mas espaçadas, leves... como se estivesse te seguindo sem querer ser notado. Isso é típico de híbrido."    
 ]
 
