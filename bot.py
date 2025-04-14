@@ -1,5 +1,7 @@
 import random
 import os
+import threading
+from flask import Flask
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
 from dotenv import load_dotenv
@@ -35,7 +37,7 @@ frases_infectadas = [
     "A névoa dos esporos tá densa. Tá difícil respirar. Isso só acontece quando aqueles desgraçados grandes aparecem... os que demoram anos pra virar o que são.",
     "O silêncio é estranho demais. Infectados comuns não sabem se esconder assim. Ou tem algo diferente por perto... ou alguém.",
     "Olhos brilham no escuro por um segundo. Rápidos. Focados. Não era só fome... era estratégia. Talvez um híbrido.",
-    "Tem pegadas recentes, mas espaçadas, leves... como se estivesse te seguindo sem querer ser notado. Isso é típico de híbrido."    
+    "Tem pegadas recentes, mas espaçadas, leves... como se estivesse te seguindo sem querer ser notado. Isso é típico de híbrido."
 ]
 
 # Gatilhos que ativam a resposta
@@ -57,11 +59,26 @@ async def verifica_mensagem(update: Update, context):
             frase = random.choice(frases_infectadas)
             await update.message.reply_text(frase)
 
-# Iniciar o bot
-if __name__ == "__main__":
-    app = ApplicationBuilder().token(TOKEN).build()
+# Rota do Flask
+app = Flask(__name__)
 
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, verifica_mensagem))
+@app.route('/')
+def home():
+    return "Bot rodando!"
+
+# Função para rodar o bot em paralelo
+def start_bot():
+    app_bot = ApplicationBuilder().token(TOKEN).build()
+    app_bot.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, verifica_mensagem))
 
     print("Bot rodando... esperando jogadores!")
-    app.run_polling()
+    app_bot.run_polling()
+
+# Rodar bot em thread separada
+def run_bot_in_thread():
+    threading.Thread(target=start_bot).start()
+
+# Roda o app Flask
+if __name__ == "__main__":
+    run_bot_in_thread()
+    app.run(host="0.0.0.0", port=10000)
