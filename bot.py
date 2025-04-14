@@ -1,9 +1,9 @@
 import random
 import os
-import threading
+import asyncio
 from flask import Flask
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
+from telegram.ext import ApplicationBuilder, MessageHandler, filters
 from dotenv import load_dotenv
 
 # Carrega variáveis do .env (funciona no Render se as variáveis forem definidas no painel)
@@ -52,33 +52,33 @@ gatilhos = [
 # Função que verifica se a mensagem deve gerar uma resposta
 async def verifica_mensagem(update: Update, context):
     mensagem = update.message.text.lower()
-
-    # 50% chance de resposta (bot ativo) e 50% chance de ficar em silêncio
-    if random.random() < 0.5:  # 50% de chance para ser ativo
+    if random.random() < 0.5:  # 50% de chance de responder
         if any(gatilho in mensagem for gatilho in gatilhos):
             frase = random.choice(frases_infectadas)
             await update.message.reply_text(frase)
 
-# Rota do Flask
+# Flask App
 app = Flask(__name__)
 
 @app.route('/')
 def home():
     return "Bot rodando!"
 
-# Função para rodar o bot em paralelo
-def start_bot():
+# Função principal do bot (assíncrona)
+async def main():
     app_bot = ApplicationBuilder().token(TOKEN).build()
     app_bot.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, verifica_mensagem))
-
     print("Bot rodando... esperando jogadores!")
-    app_bot.run_polling()
+    await app_bot.run_polling()
 
-# Rodar bot em thread separada
-def run_bot_in_thread():
-    threading.Thread(target=start_bot).start()
+# Roda o bot em segundo plano com asyncio
+def start_bot():
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(main())
 
-# Roda o app Flask
+# Inicializa Flask e o bot
 if __name__ == "__main__":
-    run_bot_in_thread()
+    import threading
+    threading.Thread(target=start_bot).start()
     app.run(host="0.0.0.0", port=10000)
