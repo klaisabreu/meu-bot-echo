@@ -71,14 +71,15 @@ async def main():
     print("Bot rodando... esperando jogadores!")
     await app_bot.run_polling()
 
-# Roda o bot em segundo plano com asyncio
-def start_bot():
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(main())
-
-# Inicializa Flask e o bot
+# Inicializa Flask e o bot (versão para Render)
 if __name__ == "__main__":
     import threading
-    threading.Thread(target=start_bot).start()
-    app.run(host="0.0.0.0", port=10000)
+
+    # Roda o Flask numa thread separada
+    def run_flask():
+        app.run(host="0.0.0.0", port=10000)
+
+    threading.Thread(target=run_flask).start()
+
+    # Roda o bot na thread principal
+    asyncio.run(main())
